@@ -9,9 +9,6 @@ public class Fibonacci {
         else if (number ==2){
             return 1;
         }
-        else if (number == 3){
-            return 1;
-        }
 
         return calculateNFibonacciNumber(number -1) + calculateNFibonacciNumber(number -2);
 
