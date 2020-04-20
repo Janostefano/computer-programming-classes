@@ -17,6 +17,9 @@ public class DirectoryCounter {
         } else {
             for (File fileInDirectory: directory.listFiles()){
                 sum ++;
+                if (fileInDirectory.isDirectory()){
+                    sum += countFiles(fileInDirectory);
+                }
             }
         }
         return sum;
