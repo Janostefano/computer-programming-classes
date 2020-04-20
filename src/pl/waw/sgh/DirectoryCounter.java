@@ -5,7 +5,7 @@ import java.io.File;
 public class DirectoryCounter {
 
     public static void main(String[] args) {
-        File folder = new File("./src/pl/waw/sgh");
+        File folder = new File("./src");
         System.out.println(countFiles(folder));
         System.out.println(countFilesSize(folder));
     }
@@ -29,6 +29,9 @@ public class DirectoryCounter {
         } else {
             for (File fileInDirectory: directory.listFiles()){
                 sum += fileInDirectory.length();
+                if (fileInDirectory.isDirectory()){
+                    sum += countFilesSize(fileInDirectory);
+                }
             }
         }
         return sum;
